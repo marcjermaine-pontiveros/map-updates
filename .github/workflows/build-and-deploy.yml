@@ -23,10 +23,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: "Install dependencies"
-        run: npm install
+        run: npm install && npm update
 
       - name: "Build scripts"
-        run: npm run build
+        run: npm install --save-dev @workadventure/iframe-api-typings && npm run build
 
       - name: "Move scripts"
         run: mv dist/* .
